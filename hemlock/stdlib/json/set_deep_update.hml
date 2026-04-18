@@ -1,0 +1,9 @@
+import { parse, stringify, set } from "@stdlib/json";
+
+let doc = parse("{\"user\":{\"name\":\"Alice\",\"settings\":{\"theme\":\"light\"}},\"counts\":[1,2,3]}");
+
+set(doc, "user.name", "Bob");
+set(doc, "user.settings.theme", "dark");
+set(doc, "counts.1", 99);
+
+print(stringify(doc));

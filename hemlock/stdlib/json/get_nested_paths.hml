@@ -1,0 +1,16 @@
+import { get } from "@stdlib/json";
+
+let doc = {
+    user: {
+        name: "Alice",
+        address: { city: "NYC", zip: 10001 }
+    },
+    items: [10, 20, 30],
+    flags: { admin: true }
+};
+
+print(get(doc, "user.name"));
+print(get(doc, "user.address.city"));
+print(get(doc, "items.2"));
+print(get(doc, "user.phone", "(none)"));
+print(get(doc, "flags.admin"));

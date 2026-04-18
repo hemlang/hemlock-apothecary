@@ -1,0 +1,9 @@
+import { base64_encode, base64_decode } from "@stdlib/encoding";
+
+let messages = ["Hello, World!", "Hemlock rocks", "foo bar baz"];
+
+for (m in messages) {
+    let enc = base64_encode(m);
+    let dec = base64_decode(enc);
+    print(`${m} -> ${enc} -> ${dec}`);
+}

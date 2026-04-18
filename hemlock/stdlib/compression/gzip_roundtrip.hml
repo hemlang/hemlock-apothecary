@@ -1,0 +1,12 @@
+import { gzip, gunzip } from "@stdlib/compression";
+
+let original = "Hemlock is a systems scripting language. " +
+               "Hemlock is a systems scripting language. " +
+               "Hemlock is a systems scripting language.";
+
+let compressed = gzip(original);
+let restored = gunzip(compressed);
+
+print(`original bytes: ${original.byte_length}`);
+print(`restored matches: ${original == restored}`);
+print(`restored bytes: ${restored.byte_length}`);

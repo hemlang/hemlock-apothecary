@@ -1,0 +1,9 @@
+import { pad_left, pad_right, center } from "@stdlib/strings";
+
+let names = ["Alice", "Bob", "Charlie"];
+let scores = [95, 100, 72];
+
+print(`${center("name", 10, '-')}|${center("score", 7, '-')}`);
+for (let i = 0; i < names.length; i++) {
+    print(`${pad_right(names[i], 10, ' ')}|${pad_left(scores[i], 7, ' ')}`);
+}

@@ -1,0 +1,12 @@
+import { lines, words } from "@stdlib/strings";
+
+let doc = "The quick brown fox\njumps over the lazy dog\nover and over again";
+
+let line_arr = lines(doc);
+print(`lines: ${line_arr.length}`);
+for (let i = 0; i < line_arr.length; i++) {
+    print(`  [${i}] ${line_arr[i]}`);
+}
+
+let word_arr = words(doc);
+print(`words: ${word_arr.length}`);

@@ -1,0 +1,18 @@
+import { HashMap } from "@stdlib/collections";
+
+fn word_count(text: string) {
+    let counts = HashMap();
+    for (w in text.split(" ")) {
+        if (counts.has(w)) {
+            counts.set(w, counts.get(w) + 1);
+        } else {
+            counts.set(w, 1);
+        }
+    }
+    return counts;
+}
+
+let counts = word_count("the quick brown fox the lazy dog the");
+for (k in counts.keys()) {
+    print(`${k}: ${counts.get(k)}`);
+}

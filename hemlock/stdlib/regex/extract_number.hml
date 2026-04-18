@@ -1,0 +1,17 @@
+import { test, REG_EXTENDED } from "@stdlib/regex";
+
+let lines = [
+    "Order #1042 shipped",
+    "Invoice 9999-A pending",
+    "Item ABC has no number",
+    "Ref: 27 (priority)"
+];
+
+let pattern = "[0-9]+";
+for (l in lines) {
+    if (test(pattern, l, REG_EXTENDED)) {
+        print(`has digits: ${l}`);
+    } else {
+        print(`no digits:  ${l}`);
+    }
+}

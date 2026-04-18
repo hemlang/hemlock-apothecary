@@ -1,0 +1,22 @@
+import { LinkedList, Queue, Stack } from "@stdlib/collections";
+
+let ll = LinkedList();
+ll.append(3); ll.append(1); ll.append(4); ll.append(1); ll.append(5);
+
+let sorted = ll.to_array();
+sorted.sort();
+print(`sorted: ${sorted.join(",")}`);
+
+let doubled = ll.to_array().map(fn(x) { return x * 2; });
+print(`doubled: ${doubled.join(",")}`);
+
+let q = Queue();
+q.enqueue(10); q.enqueue(25); q.enqueue(4); q.enqueue(99); q.enqueue(17);
+let big = q.to_array().filter(fn(x) { return x > 20; });
+print(`filtered: ${big.join(",")}`);
+
+let s = Stack();
+s.push("a"); s.push("b"); s.push("c");
+let reversed = s.to_array();
+reversed.reverse();
+print(`stack reversed: ${reversed.join(",")}`);

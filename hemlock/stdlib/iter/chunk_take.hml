@@ -1,0 +1,11 @@
+import { chunk, take } from "@stdlib/iter";
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let groups = chunk(nums, 3);
+for (let i = 0; i < groups.length; i++) {
+    print(`chunk ${i}: ${groups[i].join(",")}`);
+}
+
+let first_five = take(nums, 5);
+print(`take(5): ${first_five.join(", ")}`);

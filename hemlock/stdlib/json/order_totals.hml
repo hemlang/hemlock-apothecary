@@ -1,0 +1,16 @@
+import { parse } from "@stdlib/json";
+import { to_fixed } from "@stdlib/decimal";
+
+let raw = "[{\"id\":1,\"amount\":19.99},{\"id\":2,\"amount\":5.50},{\"id\":3,\"amount\":42.00},{\"id\":4,\"amount\":8.25}]";
+let orders = parse(raw);
+
+let total = 0.0;
+let max_amount = 0.0;
+for (o in orders) {
+    total += o.amount;
+    if (o.amount > max_amount) { max_amount = o.amount; }
+}
+
+print(`orders: ${orders.length}`);
+print(`total:  $${to_fixed(total, 2)}`);
+print(`max:    $${to_fixed(max_amount, 2)}`);

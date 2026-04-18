@@ -1,0 +1,13 @@
+import { url_encode } from "@stdlib/encoding";
+
+let params = [
+    { key: "q",      value: "hello world" },
+    { key: "lang",   value: "en-US" },
+    { key: "email",  value: "a+b@example.com" }
+];
+
+let parts = [];
+for (p in params) {
+    parts.push(`${url_encode(p.key)}=${url_encode(p.value)}`);
+}
+print(`?${parts.join("&")}`);

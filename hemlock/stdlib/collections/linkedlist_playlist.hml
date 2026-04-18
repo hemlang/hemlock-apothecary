@@ -1,0 +1,20 @@
+import { LinkedList } from "@stdlib/collections";
+
+let playlist = LinkedList();
+playlist.append("intro");
+playlist.append("verse");
+playlist.append("outro");
+playlist.insert(2, "chorus");
+playlist.prepend("silence");
+
+print(`size: ${playlist.size}`);
+for (let i = 0; i < playlist.size; i++) {
+    print(`${i}: ${playlist.get(i)}`);
+}
+
+print(`contains chorus: ${playlist.contains("chorus")}`);
+print(`index of outro:  ${playlist.index_of("outro")}`);
+
+playlist.remove(0);
+playlist.reverse();
+print(`reversed: ${playlist.to_array().join(" -> ")}`);

@@ -1,0 +1,5 @@
+import { sha256, md5 } from "@stdlib/hash";
+
+let msg = "hello world";
+print(`sha256: ${sha256(msg)}`);
+print(`md5:    ${md5(msg)}`);

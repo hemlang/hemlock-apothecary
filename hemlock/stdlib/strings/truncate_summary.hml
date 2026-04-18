@@ -1,0 +1,11 @@
+import { truncate } from "@stdlib/strings";
+
+let titles = [
+    "A Short Title",
+    "This one is medium length here",
+    "A significantly longer headline that should be clipped when shown in a compact list"
+];
+
+for (t in titles) {
+    print(truncate(t, 30, "..."));
+}

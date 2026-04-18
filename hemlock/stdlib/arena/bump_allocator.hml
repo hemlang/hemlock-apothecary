@@ -1,0 +1,16 @@
+import { Arena } from "@stdlib/arena";
+
+let a = Arena(1024);
+
+let p1 = a.alloc(64);
+let p2 = a.alloc(128);
+let p3 = a.alloc_aligned(32, 16);
+
+print(`used: ${a.used}`);
+print(`capacity: ${a.capacity}`);
+print(`remaining: ${a.remaining}`);
+
+a.reset();
+print(`used after reset: ${a.used}`);
+
+a.destroy();

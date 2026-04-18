@@ -1,0 +1,11 @@
+import { set_seed, randint, choice, sample } from "@stdlib/random";
+
+set_seed(12345);
+
+let rolls = [];
+for (let i = 0; i < 5; i++) { rolls.push(randint(1, 100)); }
+print(`randint: ${rolls.join(", ")}`);
+
+let colors = ["red", "green", "blue", "yellow", "purple"];
+print(`choice:  ${choice(colors)}`);
+print(`sample:  ${sample(colors, 3).join(", ")}`);

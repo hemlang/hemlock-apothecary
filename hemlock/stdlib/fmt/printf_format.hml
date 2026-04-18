@@ -1,0 +1,7 @@
+import { format } from "@stdlib/fmt";
+
+print(format("Name: %s, Age: %d", ["Alice", 30]));
+print(format("Pi: %.3f", [3.14159]));
+print(format("Hex: %x, Oct: %o, Bin: %b", [255, 64, 10]));
+print(format("[%10s] [%-10s] [%05d]", ["hi", "hi", 42]));
+print(format("%+d vs % d", [42, 42]));

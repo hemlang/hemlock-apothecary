@@ -1,0 +1,9 @@
+import { parse, has_flag, get_option, get_positionals } from "@stdlib/args";
+
+let argv = ["script.hml", "build", "--verbose", "--output", "out.txt", "src/main.hml"];
+let parsed = parse(argv);
+
+print(`verbose: ${has_flag(parsed, "verbose")}`);
+print(`output:  ${get_option(parsed, "output", "default.txt")}`);
+print(`target:  ${get_option(parsed, "target", "debug")}`);
+print(`positionals: ${get_positionals(parsed).join(", ")}`);

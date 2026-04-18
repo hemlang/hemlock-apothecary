@@ -1,0 +1,19 @@
+import { Set } from "@stdlib/collections";
+
+let raw_tags = ["urgent", "bug", "urgent", "feature", "bug", "docs", "feature"];
+let tags = Set();
+for (t in raw_tags) { tags.add(t); }
+
+print(`unique tag count: ${tags.size}`);
+let values = tags.values();
+values.sort();
+print(`tags: ${values.join(", ")}`);
+
+let other = Set();
+other.add("bug");
+other.add("regression");
+let common = tags.intersection(other);
+let combined = tags.union(other).values();
+combined.sort();
+print(`common with {bug,regression}: ${common.values().join(", ")}`);
+print(`combined: ${combined.join(", ")}`);

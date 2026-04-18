@@ -1,0 +1,11 @@
+import { assert, assert_eq, assert_ne, assert_type } from "@stdlib/assert";
+
+fn add(a: i32, b: i32): i32 { return a + b; }
+
+assert(add(2, 3) == 5, "2 + 3 should be 5");
+assert_eq(add(10, -4), 6);
+assert_ne(add(1, 1), 3);
+assert_type("hello", "string");
+assert_type(42, "i32");
+
+print("all assertions passed");

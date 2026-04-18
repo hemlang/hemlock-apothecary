@@ -1,0 +1,17 @@
+import { LRUCache } from "@stdlib/collections";
+
+let cache = LRUCache(3);
+cache.set("a", 1);
+cache.set("b", 2);
+cache.set("c", 3);
+print(`size: ${cache.size()}`);
+
+cache.get("a");
+cache.set("d", 4);
+
+print(`has a: ${cache.has("a")}`);
+print(`has b: ${cache.has("b")}`);
+print(`has c: ${cache.has("c")}`);
+print(`has d: ${cache.has("d")}`);
+print(`most recent: ${cache.most_recent()}`);
+print(`least recent: ${cache.least_recent()}`);

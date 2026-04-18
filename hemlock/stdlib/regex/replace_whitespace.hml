@@ -1,0 +1,8 @@
+import { replace_all, REG_EXTENDED } from "@stdlib/regex";
+
+let messy = "hello   world    foo  bar";
+let clean = replace_all(" +", messy, " ", REG_EXTENDED);
+print(clean);
+
+let cleaned = replace_all("[0-9]+", "order 123 and 456 done", "NUM", REG_EXTENDED);
+print(cleaned);

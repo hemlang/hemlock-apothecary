@@ -1,0 +1,13 @@
+import { parse, get_column } from "@stdlib/csv";
+import { parse_int } from "@stdlib/decimal";
+
+let text = "item,qty,price\napple,10,1\nbread,3,4\nmilk,6,2";
+let rows = parse(text);
+
+let qty_col = get_column(rows, 1);
+let total = 0;
+for (let i = 1; i < qty_col.length; i++) {
+    total += parse_int(qty_col[i], 10);
+}
+print(`header: ${qty_col[0]}`);
+print(`total qty: ${total}`);

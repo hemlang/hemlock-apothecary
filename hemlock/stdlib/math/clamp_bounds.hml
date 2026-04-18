@@ -1,0 +1,12 @@
+import { clamp, min, max } from "@stdlib/math";
+
+let readings = [-5, 3, 12, 87, 150, 99, 0];
+let lo = 0;
+let hi = 100;
+
+for (r in readings) {
+    print(`${r} -> ${clamp(r, lo, hi)}`);
+}
+
+print(`min overall: ${min(readings[0], min(readings[1], readings[2]))}`);
+print(`max overall: ${max(readings[4], max(readings[3], readings[5]))}`);

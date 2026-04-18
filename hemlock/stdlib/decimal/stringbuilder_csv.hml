@@ -1,0 +1,15 @@
+import { sb_new, sb_append, sb_to_string } from "@stdlib/decimal";
+
+let rows = [
+    ["name", "age", "city"],
+    ["Alice", "30", "NYC"],
+    ["Bob", "25", "LA"],
+    ["Charlie", "40", "Chicago"]
+];
+
+let sb = sb_new();
+for (row in rows) {
+    sb_append(sb, row.join(","));
+    sb_append(sb, "\n");
+}
+print(sb_to_string(sb));

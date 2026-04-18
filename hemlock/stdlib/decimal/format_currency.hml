@@ -1,0 +1,18 @@
+import { to_fixed } from "@stdlib/decimal";
+
+fn format_usd(amount: f64): string {
+    return `$${to_fixed(amount, 2)}`;
+}
+
+let items = [
+    { name: "coffee", price: 4.5 },
+    { name: "pastry", price: 3.25 },
+    { name: "tip",    price: 1.0 }
+];
+
+let total = 0.0;
+for (it in items) {
+    print(`${it.name}: ${format_usd(it.price)}`);
+    total += it.price;
+}
+print(`total: ${format_usd(total)}`);

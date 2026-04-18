@@ -1,0 +1,8 @@
+import { parse, get } from "@stdlib/toml";
+
+let doc = parse("[app]\nname = \"hemlock\"\nversion = \"2.0.0\"\n\n[app.limits]\nmax_users = 1000\nmax_memory_mb = 512\n");
+
+print(get(doc, "app.name"));
+print(get(doc, "app.version"));
+print(get(doc, "app.limits.max_users"));
+print(get(doc, "app.limits.max_memory_mb"));

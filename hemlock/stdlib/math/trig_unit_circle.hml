@@ -1,0 +1,9 @@
+import { sin, cos, PI } from "@stdlib/math";
+import { to_fixed } from "@stdlib/decimal";
+
+let angles = [0.0, PI / 4.0, PI / 2.0, PI, 3.0 * PI / 2.0];
+for (a in angles) {
+    let x = cos(a);
+    let y = sin(a);
+    print(`(${to_fixed(x, 4)}, ${to_fixed(y, 4)})`);
+}

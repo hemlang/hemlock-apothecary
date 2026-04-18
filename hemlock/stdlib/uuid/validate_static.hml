@@ -1,0 +1,16 @@
+import { is_valid, is_nil, to_upper, to_lower } from "@stdlib/uuid";
+
+let samples = [
+    "550e8400-e29b-41d4-a716-446655440000",
+    "00000000-0000-0000-0000-000000000000",
+    "not-a-uuid",
+    "550E8400-E29B-41D4-A716-446655440000"
+];
+
+for (s in samples) {
+    if (is_valid(s)) {
+        print(`valid: ${s} (nil=${is_nil(s)}) upper=${to_upper(s)}`);
+    } else {
+        print(`invalid: ${s}`);
+    }
+}

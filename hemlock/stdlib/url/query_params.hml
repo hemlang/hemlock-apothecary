@@ -1,0 +1,12 @@
+import { parse_query, format_query, get_query_param, set_query_param } from "@stdlib/url";
+
+let params = parse_query("page=2&limit=25&sort=date");
+for (p in params) {
+    print(`${p.name} = ${p.value}`);
+}
+
+let url = "https://api.example.com/items?page=1";
+print(get_query_param(url, "page"));
+
+let updated = set_query_param(url, "page", "5");
+print(updated);

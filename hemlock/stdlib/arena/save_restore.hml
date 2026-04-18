@@ -1,0 +1,16 @@
+import { Arena } from "@stdlib/arena";
+
+let a = Arena(2048);
+
+let persistent = a.alloc(200);
+print(`after persistent: ${a.used} bytes used`);
+
+let mark = a.save();
+let temp1 = a.alloc(300);
+let temp2 = a.alloc(400);
+print(`after temp allocs: ${a.used} bytes used`);
+
+a.restore(mark);
+print(`after restore: ${a.used} bytes used`);
+
+a.destroy();

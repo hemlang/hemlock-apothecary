@@ -1,0 +1,12 @@
+import { from_date } from "@stdlib/datetime";
+
+let start = from_date(2026, 1, 1);
+let week  = start.add_days(7);
+let month = start.add_days(30);
+let year  = start.add_days(365);
+
+print(`start:  ${start.to_date_string()}`);
+print(`+7d:    ${week.to_date_string()}`);
+print(`+30d:   ${month.to_date_string()}`);
+print(`+365d:  ${year.to_date_string()}`);
+print(`days between start and +365d: ${year.diff_days(start)}`);

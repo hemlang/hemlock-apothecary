@@ -1,0 +1,7 @@
+import { stringify } from "@stdlib/json";
+
+let defaults = { host: "localhost", port: 8080, debug: false, retries: 3 };
+let overrides = { port: 9000, debug: true };
+let merged = { ...defaults, ...overrides };
+
+print(stringify(merged));

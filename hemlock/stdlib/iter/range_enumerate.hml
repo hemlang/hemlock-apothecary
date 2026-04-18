@@ -1,0 +1,12 @@
+import { range, enumerate } from "@stdlib/iter";
+
+let nums = range(5);
+print(`range(5): ${nums.join(", ")}`);
+
+let stepped = range(0, 20, 4);
+print(`range(0,20,4): ${stepped.join(", ")}`);
+
+let labels = ["red", "green", "blue"];
+for (p in enumerate(labels, 1)) {
+    print(`${p[0]}: ${p[1]}`);
+}

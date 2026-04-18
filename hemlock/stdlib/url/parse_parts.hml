@@ -1,0 +1,10 @@
+import { parse } from "@stdlib/url";
+
+let u = parse("https://user:pass@example.com:8080/api/v2/users?limit=10&sort=name#top");
+
+print(`scheme:   ${u.scheme}`);
+print(`host:     ${u.host}`);
+print(`port:     ${u.port}`);
+print(`path:     ${u.path}`);
+print(`query:    ${u.query}`);
+print(`fragment: ${u.fragment}`);

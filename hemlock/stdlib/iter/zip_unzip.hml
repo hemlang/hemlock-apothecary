@@ -1,0 +1,13 @@
+import { zip, unzip } from "@stdlib/iter";
+
+let names = ["Alice", "Bob", "Charlie"];
+let ages = [30, 25, 40];
+
+let pairs = zip(names, ages);
+for (p in pairs) {
+    print(`${p[0]} is ${p[1]}`);
+}
+
+let split = unzip(pairs);
+print(`names: ${split[0].join(", ")}`);
+print(`ages:  ${split[1].join(", ")}`);

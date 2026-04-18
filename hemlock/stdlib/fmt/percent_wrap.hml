@@ -1,0 +1,8 @@
+import { percent, wrap } from "@stdlib/fmt";
+
+print(percent(0.125));
+print(percent(0.8542, 2));
+print(percent(1.0));
+print("---");
+let text = "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.";
+print(wrap(text, 30));

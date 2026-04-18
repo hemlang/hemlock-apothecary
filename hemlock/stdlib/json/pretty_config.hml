@@ -1,0 +1,5 @@
+import { parse, pretty } from "@stdlib/json";
+
+let raw = "{\"server\":{\"host\":\"localhost\",\"port\":8080},\"features\":[\"auth\",\"logging\"]}";
+let cfg = parse(raw);
+print(pretty(cfg, 2));

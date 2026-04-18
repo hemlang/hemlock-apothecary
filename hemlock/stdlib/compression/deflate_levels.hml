@@ -1,0 +1,11 @@
+import { deflate_compress, inflate_decompress } from "@stdlib/compression";
+
+let text = "banana bandana banana bandana banana bandana banana bandana";
+
+let low  = deflate_compress(text, 1);
+let high = deflate_compress(text, 9);
+
+print(`original: ${text.byte_length} bytes`);
+print(`level 1:  compressed`);
+print(`level 9:  compressed`);
+print(`restored: ${inflate_decompress(high) == text}`);

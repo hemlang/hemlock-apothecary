@@ -1,0 +1,9 @@
+import { join, dirname, basename, extname } from "@stdlib/path";
+
+let p = join("/var/log", "app/server.log");
+print(p);
+print(dirname(p));
+print(basename(p));
+print(basename(p, ".log"));
+print(extname(p));
+print(extname("README"));

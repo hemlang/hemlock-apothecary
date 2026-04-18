@@ -1,0 +1,9 @@
+import { encode_component, decode_component } from "@stdlib/url";
+
+let raw = ["hello world", "a+b=c", "name@host", "résumé"];
+
+for (s in raw) {
+    let enc = encode_component(s);
+    let dec = decode_component(enc);
+    print(`${s} -> ${enc} -> ${dec}`);
+}

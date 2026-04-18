@@ -1,0 +1,13 @@
+import { htons, htonl, ntohs, ntohl } from "@stdlib/bytes";
+import { to_hex } from "@stdlib/decimal";
+
+let port: u16 = 8080;
+let ip: u32 = 0xC0A80101;  // 192.168.1.1
+
+let port_net = htons(port);
+let ip_net   = htonl(ip);
+
+print(`host port  ${port} -> network ${to_hex(port_net)}`);
+print(`host ip    ${to_hex(ip)} -> network ${to_hex(ip_net)}`);
+
+print(`back to host: ${ntohs(port_net)} / ${to_hex(ntohl(ip_net))}`);

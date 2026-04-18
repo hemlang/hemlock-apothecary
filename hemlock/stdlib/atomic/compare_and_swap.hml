@@ -1,0 +1,12 @@
+import { atomic_cas_i32, atomic_load_i32, atomic_store_i32 } from "@stdlib/atomic";
+
+let p = alloc(4);
+atomic_store_i32(p, 42);
+
+let ok1 = atomic_cas_i32(p, 42, 100);
+print(`first CAS (expected 42): success=${ok1}, value=${atomic_load_i32(p)}`);
+
+let ok2 = atomic_cas_i32(p, 42, 200);
+print(`second CAS (expected 42, but it's 100): success=${ok2}, value=${atomic_load_i32(p)}`);
+
+free(p);

@@ -1,0 +1,11 @@
+import { parse, format } from "@stdlib/path";
+
+let p = parse("/home/alice/docs/report.pdf");
+print(`root: ${p.root}`);
+print(`dir:  ${p.dir}`);
+print(`base: ${p.base}`);
+print(`name: ${p.name}`);
+print(`ext:  ${p.ext}`);
+
+let rebuilt = format(p);
+print(`rebuilt: ${rebuilt}`);

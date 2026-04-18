@@ -1,0 +1,12 @@
+import { from_rows } from "@stdlib/matrix";
+
+let a = from_rows([[1, 2], [3, 4]]);
+let b = from_rows([[5, 6], [7, 8]]);
+
+let sum = a.add(b);
+print(`sum[0]: ${sum.row(0).join(", ")}`);
+print(`sum[1]: ${sum.row(1).join(", ")}`);
+
+let prod = a.mul(b);
+print(`prod[0]: ${prod.row(0).join(", ")}`);
+print(`prod[1]: ${prod.row(1).join(", ")}`);

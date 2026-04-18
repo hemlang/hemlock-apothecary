@@ -1,0 +1,14 @@
+import { parallel_map } from "@stdlib/async";
+
+fn square(n: i32): i32 {
+    return n * n;
+}
+
+let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let squares = parallel_map(input, square, 4);
+
+print(`squares: ${squares.join(", ")}`);
+
+let total = 0;
+for (s in squares) { total += s; }
+print(`sum: ${total}`);

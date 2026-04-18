@@ -1,0 +1,12 @@
+import { normalize, is_absolute } from "@stdlib/path";
+
+let paths = [
+    "/a/b/../c/./d",
+    "./foo/bar",
+    "/usr//local///bin",
+    "/tmp/"
+];
+
+for (p in paths) {
+    print(`${p} -> ${normalize(p)} (absolute=${is_absolute(p)})`);
+}

@@ -1,0 +1,8 @@
+import { from_date } from "@stdlib/datetime";
+
+let dt = from_date(2026, 4, 17, 14, 30, 0);
+print(dt.to_iso_string());
+print(dt.to_date_string());
+print(dt.to_time_string());
+print(dt.format("%Y-%m-%d"));
+print(dt.format("%H:%M:%S"));

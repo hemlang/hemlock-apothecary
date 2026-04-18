@@ -1,0 +1,6 @@
+import { to_hex, to_bin, to_oct } from "@stdlib/decimal";
+
+let values = [0, 10, 255, 1024, 65535];
+for (v in values) {
+    print(`${v}: hex=${to_hex(v)} oct=${to_oct(v)} bin=${to_bin(v)}`);
+}

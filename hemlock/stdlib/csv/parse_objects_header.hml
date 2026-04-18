@@ -1,0 +1,8 @@
+import { parse_objects } from "@stdlib/csv";
+
+let text = "name,score\nAlice,95\nBob,72\nCharlie,88";
+let users = parse_objects(text);
+
+for (u in users) {
+    print(`${u.name}: ${u.score}`);
+}

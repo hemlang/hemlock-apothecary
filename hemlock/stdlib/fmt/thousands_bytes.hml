@@ -1,0 +1,17 @@
+import { thousands, bytes_size, duration, ordinal } from "@stdlib/fmt";
+
+let nums = [1234, 1234567, 1234567890];
+for (n in nums) {
+    print(`${n} -> ${thousands(n)}`);
+}
+
+let sizes = [512, 1500000, 1500000000, 1500000000000];
+for (s in sizes) {
+    print(`${s} bytes -> ${bytes_size(s)}`);
+}
+
+print(duration(90));
+print(duration(3725));
+print(ordinal(1));
+print(ordinal(22));
+print(ordinal(103));

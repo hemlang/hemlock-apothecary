@@ -1,0 +1,9 @@
+import { hex_encode, hex_decode } from "@stdlib/encoding";
+
+let inputs = ["Hello", "AB", ""];
+
+for (s in inputs) {
+    let enc = hex_encode(s);
+    let dec = hex_decode(enc);
+    print(`"${s}" -> ${enc} -> "${dec}"`);
+}

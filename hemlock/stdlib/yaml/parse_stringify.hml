@@ -1,0 +1,10 @@
+import { parse, stringify } from "@stdlib/yaml";
+
+let input = "server:\n  host: localhost\n  port: 8080\nfeatures:\n  - auth\n  - logging\n";
+let cfg = parse(input);
+
+print(`host: ${cfg.server.host}`);
+print(`port: ${cfg.server.port}`);
+print(`features: ${cfg.features.join(", ")}`);
+print("---");
+print(stringify(cfg));

@@ -1,0 +1,11 @@
+import { reverse } from "@stdlib/strings";
+
+fn is_palindrome(s: string): bool {
+    let lower = s.to_lower();
+    return lower == reverse(lower);
+}
+
+let tests = ["racecar", "hello", "level", "palindrome", "Rotator"];
+for (t in tests) {
+    print(`${t} -> ${is_palindrome(t)}`);
+}

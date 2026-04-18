@@ -1,0 +1,10 @@
+import { bswap16, bswap32, bswap64 } from "@stdlib/bytes";
+import { to_hex } from "@stdlib/decimal";
+
+let v16: u16 = 0xABCD;
+let v32: u32 = 0x12345678;
+let v64: u64 = 0x0123456789ABCDEF;
+
+print(`${to_hex(v16)} -> ${to_hex(bswap16(v16))}`);
+print(`${to_hex(v32)} -> ${to_hex(bswap32(v32))}`);
+print(`${to_hex(v64)} -> ${to_hex(bswap64(v64))}`);

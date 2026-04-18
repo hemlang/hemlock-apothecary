@@ -1,0 +1,13 @@
+import { parse, compare } from "@stdlib/semver";
+
+let v1 = parse("1.2.3");
+let v2 = parse("2.0.0-rc.1");
+let v3 = parse("1.2.3-beta+build.42");
+
+print(`v1: major=${v1.major} minor=${v1.minor} patch=${v1.patch}`);
+print(`v2: major=${v2.major} prerelease=${v2.prerelease}`);
+print(`v3: build=${v3.build}`);
+
+print(`compare(1.2.3, 2.0.0-rc.1): ${compare("1.2.3", "2.0.0-rc.1")}`);
+print(`compare(2.0.0, 2.0.0):      ${compare("2.0.0", "2.0.0")}`);
+print(`compare(2.0.0-rc.1, 2.0.0): ${compare("2.0.0-rc.1", "2.0.0")}`);

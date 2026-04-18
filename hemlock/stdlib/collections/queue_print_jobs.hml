@@ -1,0 +1,15 @@
+import { Queue } from "@stdlib/collections";
+
+let jobs = Queue();
+jobs.enqueue({ id: 1, doc: "report.pdf" });
+jobs.enqueue({ id: 2, doc: "invoice.pdf" });
+jobs.enqueue({ id: 3, doc: "notes.txt" });
+
+print(`queued: ${jobs.size}`);
+print(`next up: ${jobs.peek().doc}`);
+
+while (!jobs.is_empty()) {
+    let j = jobs.dequeue();
+    print(`printing [${j.id}] ${j.doc}`);
+}
+print(`done: ${jobs.is_empty()}`);

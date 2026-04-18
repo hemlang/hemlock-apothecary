@@ -1,0 +1,7 @@
+import { parse, get } from "@stdlib/yaml";
+
+let doc = parse("database:\n  host: db.local\n  credentials:\n    user: admin\n    pass: secret\nretries: 3\n");
+
+print(get(doc, "database.host"));
+print(get(doc, "database.credentials.user"));
+print(get(doc, "retries"));

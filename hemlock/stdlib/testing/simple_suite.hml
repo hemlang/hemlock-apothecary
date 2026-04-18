@@ -1,0 +1,21 @@
+import { describe, test, expect, run } from "@stdlib/testing";
+
+describe("arithmetic", fn() {
+    test("addition", fn() {
+        expect(2 + 3).to_equal(5);
+    });
+    test("subtraction", fn() {
+        expect(10 - 4).to_equal(6);
+    });
+});
+
+describe("strings", fn() {
+    test("concat", fn() {
+        expect("foo" + "bar").to_equal("foobar");
+    });
+    test("length", fn() {
+        expect("hello".length).to_equal(5);
+    });
+});
+
+run();

@@ -1,0 +1,12 @@
+import { parse, stringify } from "@stdlib/csv";
+
+let text = "name,age,city\nAlice,30,NYC\nBob,25,LA\nCharlie,40,Chicago";
+let rows = parse(text);
+
+print(`rows: ${rows.length}`);
+for (row in rows) {
+    print(row.join(" | "));
+}
+
+print("--- re-serialized ---");
+print(stringify(rows));

@@ -1,0 +1,6 @@
+import { floor, ceil, round, trunc } from "@stdlib/math";
+
+let values = [2.3, 2.5, 2.7, -2.3, -2.5, -2.7];
+for (v in values) {
+    print(`${v}: floor=${floor(v)} ceil=${ceil(v)} round=${round(v)} trunc=${trunc(v)}`);
+}

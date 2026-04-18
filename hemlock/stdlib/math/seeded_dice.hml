@@ -1,0 +1,12 @@
+import { rand_range, floor, seed } from "@stdlib/math";
+
+seed(42);
+let rolls = [];
+for (let i = 0; i < 10; i++) {
+    rolls.push(floor(rand_range(1.0, 7.0)));
+}
+print(`rolls: ${rolls.join(", ")}`);
+
+let sum = 0;
+for (r in rolls) { sum += r; }
+print(`sum: ${sum}`);

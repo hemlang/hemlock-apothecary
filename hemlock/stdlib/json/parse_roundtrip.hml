@@ -1,0 +1,7 @@
+import { parse, stringify } from "@stdlib/json";
+
+let input = "{\"name\":\"alice\",\"age\":30,\"tags\":[\"admin\",\"ops\"]}";
+let obj = parse(input);
+obj.age = obj.age + 1;
+obj.tags.push("active");
+print(stringify(obj));

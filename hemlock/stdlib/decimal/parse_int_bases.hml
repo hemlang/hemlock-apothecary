@@ -1,0 +1,7 @@
+import { parse_int } from "@stdlib/decimal";
+
+print(`"42"    base 10 -> ${parse_int("42", 10)}`);
+print(`"ff"    base 16 -> ${parse_int("ff", 16)}`);
+print(`"1010"  base 2  -> ${parse_int("1010", 2)}`);
+print(`"777"   base 8  -> ${parse_int("777", 8)}`);
+print(`"-100"  base 10 -> ${parse_int("-100", 10)}`);

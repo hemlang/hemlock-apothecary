@@ -1,0 +1,13 @@
+import { gcd, lcm } from "@stdlib/math";
+import { divi } from "@stdlib/math";
+
+fn reduce(num: i32, den: i32) {
+    let g = gcd(num, den);
+    print(`${num}/${den} = ${divi(num, g)}/${divi(den, g)}`);
+}
+
+reduce(12, 18);
+reduce(100, 75);
+reduce(7, 13);
+print(`lcm(4, 6) = ${lcm(4, 6)}`);
+print(`lcm(9, 12) = ${lcm(9, 12)}`);

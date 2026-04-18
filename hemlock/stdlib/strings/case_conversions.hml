@@ -1,0 +1,11 @@
+import { snake_case, camel_case, pascal_case, kebab_case } from "@stdlib/strings";
+
+let inputs = ["hello world", "Hello World", "helloWorld", "hello-world_case"];
+
+for (s in inputs) {
+    print(`${s}`);
+    print(`  snake:  ${snake_case(s)}`);
+    print(`  camel:  ${camel_case(s)}`);
+    print(`  pascal: ${pascal_case(s)}`);
+    print(`  kebab:  ${kebab_case(s)}`);
+}

@@ -1,0 +1,13 @@
+import { sqrt, pow } from "@stdlib/math";
+
+fn distance(x1: f64, y1: f64, x2: f64, y2: f64): f64 {
+    let dx = x2 - x1;
+    let dy = y2 - y1;
+    return sqrt(pow(dx, 2.0) + pow(dy, 2.0));
+}
+
+import { to_fixed } from "@stdlib/decimal";
+
+print(to_fixed(distance(0.0, 0.0, 3.0, 4.0), 4));
+print(to_fixed(distance(0.0, 0.0, 1.0, 1.0), 4));
+print(to_fixed(distance(-2.5, 1.0, 3.5, -2.0), 4));

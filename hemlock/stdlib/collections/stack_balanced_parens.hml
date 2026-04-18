@@ -1,0 +1,26 @@
+import { Stack } from "@stdlib/collections";
+
+fn matches(open: rune, close: rune): bool {
+    if (open == '(' && close == ')') { return true; }
+    if (open == '[' && close == ']') { return true; }
+    if (open == '{' && close == '}') { return true; }
+    return false;
+}
+
+fn balanced(expr: string): bool {
+    let s = Stack();
+    for (let i = 0; i < expr.length; i++) {
+        let ch = expr.char_at(i);
+        if (ch == '(' || ch == '[' || ch == '{') {
+            s.push(ch);
+        } else if (ch == ')' || ch == ']' || ch == '}') {
+            if (s.is_empty() || !matches(s.pop(), ch)) { return false; }
+        }
+    }
+    return s.is_empty();
+}
+
+let tests = ["()", "([]{})", "(]", "((())", "{[()]}", ""];
+for (t in tests) {
+    print(`"${t}" -> ${balanced(t)}`);
+}

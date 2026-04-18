@@ -1,0 +1,12 @@
+import { parse_objects, stringify_objects } from "@stdlib/csv";
+
+let text = "user,status\nalice,active\nbob,inactive\ncarol,active\ndave,banned";
+let users = parse_objects(text);
+
+let active = [];
+for (u in users) {
+    if (u.status == "active") { active.push(u); }
+}
+
+print(`active: ${active.length}`);
+print(stringify_objects(active, ["user", "status"]));

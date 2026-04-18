@@ -1,0 +1,15 @@
+import { atomic_load_i32, atomic_store_i32, atomic_add_i32, atomic_sub_i32 } from "@stdlib/atomic";
+
+let counter = alloc(4);
+ptr_write_i32(counter, 0);
+
+atomic_store_i32(counter, 10);
+print(atomic_load_i32(counter));
+
+atomic_add_i32(counter, 5);
+print(atomic_load_i32(counter));
+
+atomic_sub_i32(counter, 3);
+print(atomic_load_i32(counter));
+
+free(counter);

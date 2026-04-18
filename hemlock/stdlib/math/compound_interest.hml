@@ -1,0 +1,13 @@
+import { pow } from "@stdlib/math";
+import { to_fixed } from "@stdlib/decimal";
+
+fn compound(principal: f64, rate: f64, years: i32): f64 {
+    return principal * pow(1.0 + rate, years);
+}
+
+let principal = 1000.0;
+let rate = 0.05;
+for (let y = 1; y <= 5; y++) {
+    let value = compound(principal, rate, y);
+    print(`year ${y}: $${to_fixed(value, 2)}`);
+}
