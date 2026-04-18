@@ -29,13 +29,13 @@ DESCRIPTIONS = {
     ("math", "rounding_modes"):
         "print floor, ceil, round, and trunc of a handful of positive and negative decimals so the difference between the four modes is visible",
     ("math", "clamp_bounds"):
-        "clamp a list of sensor readings into the range [0, 100] and print each clamped value",
+        "clamp a list of sensor readings into the range [0, 100] and print each clamped value, tracking min/max of the raw readings in the same loop and printing the raw range and clamp range at the end",
     ("math", "seeded_dice"):
         "seed the RNG to 42, roll ten six-sided dice using floor(rand_range(1.0, 7.0)), print the rolls comma-separated, and print the sum",
 
     # ---------------- decimal ----------------
     ("decimal", "format_currency"):
-        "iterate a list of priced items, print each price formatted as USD to 2 decimals, then print the total",
+        "define a format_usd helper that wraps to_fixed(x, 2) with a dollar sign, then iterate a list of priced items (including a refund and a large amount) printing each formatted price and the final total",
     ("decimal", "int_base_convert"):
         "print a few integers in hexadecimal, octal, and binary using to_hex, to_oct, and to_bin",
     ("decimal", "parse_int_bases"):
@@ -47,7 +47,7 @@ DESCRIPTIONS = {
 
     # ---------------- hash ----------------
     ("hash", "sha256_hex"):
-        "print the SHA-256 and MD5 hex digests of the string 'hello world'",
+        "hash a handful of diverse inputs (empty string, short string, long sentence, password, composite record) with sha256() and md5(), prefixing each printed digest with the input's length",
 
     # ---------------- json ----------------
     ("json", "parse_roundtrip"):
@@ -119,7 +119,7 @@ DESCRIPTIONS = {
     ("regex", "email_test"):
         "use test() with REG_EXTENDED to validate a few candidate email addresses against a pattern and print true/false for each",
     ("regex", "extract_number"):
-        "for each log line, use test() with REG_EXTENDED and the pattern [0-9]+ to print whether it contains any digits",
+        "compile a [0-9]+ pattern once with REG_EXTENDED, then for each log line use regex.find_all() and the match's start/end indices to substring out the first number (or '(none)' if there is none), and free the compiled regex at the end",
 
     # ---------------- yaml ----------------
     ("yaml", "parse_stringify"):
@@ -143,7 +143,7 @@ DESCRIPTIONS = {
 
     # ---------------- uuid ----------------
     ("uuid", "validate_static"):
-        "check a list of candidate UUID strings with is_valid(), and for each valid one also print is_nil() and to_upper()",
+        "check a list of candidate UUID strings with is_valid(), and for each valid one print to_upper(), to_lower(), and is_nil()",
     ("uuid", "compare_equals"):
         "use equals(), compare(), and is_nil() to classify relationships between a handful of hard-coded UUID strings",
 
@@ -205,7 +205,7 @@ DESCRIPTIONS = {
     ("compression", "gzip_roundtrip"):
         "gzip a repeating string, then gunzip it, printing original byte length, whether the round-trip matches, and the restored byte length",
     ("compression", "deflate_levels"):
-        "deflate_compress a string at levels 1 and 9, then inflate_decompress and verify the round-trip matches the original",
+        "deflate_compress a string at levels 1 and 9, print the original byte_length and each compressed buffer's length in bytes, then verify both inflate_decompress results match the original",
 
     # ---------------- args ----------------
     ("args", "parse_flags"):

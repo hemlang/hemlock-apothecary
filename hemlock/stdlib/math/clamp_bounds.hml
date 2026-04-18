@@ -4,9 +4,13 @@ let readings = [-5, 3, 12, 87, 150, 99, 0];
 let lo = 0;
 let hi = 100;
 
+let lowest = readings[0];
+let highest = readings[0];
 for (r in readings) {
     print(`${r} -> ${clamp(r, lo, hi)}`);
+    lowest = min(lowest, r);
+    highest = max(highest, r);
 }
 
-print(`min overall: ${min(readings[0], min(readings[1], readings[2]))}`);
-print(`max overall: ${max(readings[4], max(readings[3], readings[5]))}`);
+print(`raw range: [${lowest}, ${highest}]`);
+print(`clamp range: [${lo}, ${hi}]`);

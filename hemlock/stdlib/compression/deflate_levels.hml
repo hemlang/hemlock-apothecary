@@ -5,7 +5,8 @@ let text = "banana bandana banana bandana banana bandana banana bandana";
 let low  = deflate_compress(text, 1);
 let high = deflate_compress(text, 9);
 
-print(`original: ${text.byte_length} bytes`);
-print(`level 1:  compressed`);
-print(`level 9:  compressed`);
-print(`restored: ${inflate_decompress(high) == text}`);
+print(`original:     ${text.byte_length} bytes`);
+print(`level 1:      ${low.length} bytes`);
+print(`level 9:      ${high.length} bytes`);
+print(`roundtrip 1:  ${inflate_decompress(low) == text}`);
+print(`roundtrip 9:  ${inflate_decompress(high) == text}`);

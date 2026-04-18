@@ -5,9 +5,14 @@ fn format_usd(amount: f64): string {
 }
 
 let items = [
-    { name: "coffee", price: 4.5 },
-    { name: "pastry", price: 3.25 },
-    { name: "tip",    price: 1.0 }
+    { name: "coffee",       price: 4.5 },
+    { name: "pastry",       price: 3.25 },
+    { name: "sandwich",     price: 12.99 },
+    { name: "sales tax",    price: 0.01 },
+    { name: "service fee",  price: 2.5 },
+    { name: "tip",          price: 3.0 },
+    { name: "gift card",    price: -10.0 },
+    { name: "catering",     price: 1248.0 }
 ];
 
 let total = 0.0;
@@ -15,4 +20,5 @@ for (it in items) {
     print(`${it.name}: ${format_usd(it.price)}`);
     total += it.price;
 }
+print(`---`);
 print(`total: ${format_usd(total)}`);

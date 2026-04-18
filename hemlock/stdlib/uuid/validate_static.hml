@@ -9,7 +9,10 @@ let samples = [
 
 for (s in samples) {
     if (is_valid(s)) {
-        print(`valid: ${s} (nil=${is_nil(s)}) upper=${to_upper(s)}`);
+        print(`valid:   ${s}`);
+        print(`  upper: ${to_upper(s)}`);
+        print(`  lower: ${to_lower(s)}`);
+        print(`  nil:   ${is_nil(s)}`);
     } else {
         print(`invalid: ${s}`);
     }

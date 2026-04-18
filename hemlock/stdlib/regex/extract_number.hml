@@ -1,4 +1,4 @@
-import { test, REG_EXTENDED } from "@stdlib/regex";
+import { compile, REG_EXTENDED } from "@stdlib/regex";
 
 let lines = [
     "Order #1042 shipped",
@@ -7,11 +7,17 @@ let lines = [
     "Ref: 27 (priority)"
 ];
 
-let pattern = "[0-9]+";
+let r = compile("[0-9]+", REG_EXTENDED);
+
 for (l in lines) {
-    if (test(pattern, l, REG_EXTENDED)) {
-        print(`has digits: ${l}`);
+    let matches = r.find_all(l, 1);
+    if (matches.length > 0) {
+        let m = matches[0];
+        let digits = l.substr(m["start"], m["end"] - m["start"]);
+        print(`${l} -> ${digits}`);
     } else {
-        print(`no digits:  ${l}`);
+        print(`${l} -> (none)`);
     }
 }
+
+r.free();

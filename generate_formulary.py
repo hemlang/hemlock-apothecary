@@ -111,13 +111,13 @@ def main():
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
-    print(f"Generated {len(rows)} stdlib SFT rows -> {OUTPUT_FILE}")
+    print(f"Generated {len(rows)} Formulary rows -> {OUTPUT_FILE}")
     print(f"Source .hml files: {sum(per_module.values())} across {len(per_module)} modules")
     for m, n in sorted(per_module.items()):
         print(f"  {m:<20} {n}")
 
     if missing_desc:
-        print(f"\nSkipped (no description in stdlib_task_descriptions.py): {len(missing_desc)}")
+        print(f"\nSkipped (no description in formulary_descriptions.py): {len(missing_desc)}")
         for m in missing_desc[:15]:
             print(f"  {m}")
 

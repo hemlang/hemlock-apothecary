@@ -1,5 +1,18 @@
 import { sha256, md5 } from "@stdlib/hash";
 
-let msg = "hello world";
-print(`sha256: ${sha256(msg)}`);
-print(`md5:    ${md5(msg)}`);
+let inputs = [
+    "",
+    "hello",
+    "The quick brown fox jumps over the lazy dog",
+    "password123",
+    "user:alice,role:admin"
+];
+
+for (s in inputs) {
+    print(`sha256(${s.length}): ${sha256(s)}`);
+}
+
+print("---");
+for (s in inputs) {
+    print(`md5(${s.length}):    ${md5(s)}`);
+}
